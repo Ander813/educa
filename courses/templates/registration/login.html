@@ -11,11 +11,11 @@
             <p>Please use the following form to log-in:</p>
         {% endif %}
         <div class="login-form">
-            <form action="{% url 'login' %}">
+            <form action="{% url 'login' %}", method="post">
                 {{ form.as_p }}
                 {% csrf_token %}
-                <input type="hidden" name="next" value="{{ next}}"/>
                 <p><input type="submit" value="log-in"></p>
+                <input type="hidden" name="next" value="{{ next }}" />
             </form>
         </div>
     </div>
